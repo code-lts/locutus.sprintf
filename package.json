@@ -1,6 +1,6 @@
 {
   "name": "locutus.sprintf",
-  "version": "2.0.14",
+  "version": "2.0.14-code-lts.1",
   "license": "MIT",
   "description": "Locutus sprintf and vsprintf for browsers and node",
   "homepage": "https://locutus.io/php/strings/sprintf/",
