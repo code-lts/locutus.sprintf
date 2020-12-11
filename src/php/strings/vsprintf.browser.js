@@ -26,7 +26,5 @@ function vsprintf (format, args) {
   //   example 1: vsprintf('%04d-%02d-%02d', [1988, 8, 1])
   //   returns 1: '1988-08-01'
 
-  const sprintf = require('./sprintf')
-
   return sprintf.apply(this, [format].concat(args))
 }

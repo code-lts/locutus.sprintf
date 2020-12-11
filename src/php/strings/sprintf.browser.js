@@ -20,7 +20,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-module.exports = function sprintf () {
+function sprintf () {
   //  discuss at: https://locutus.io/php/sprintf/
   // original by: Ash Searle (https://hexmen.com/blog/)
   // improved by: Michael White (https://getsprink.com)
@@ -52,21 +52,21 @@ module.exports = function sprintf () {
   //   example 9: sprintf('%% %2$d', 1, 2)
   //   returns 9: '% 2'
 
-  const regex = /%%|%(?:(\d+)\$)?((?:[-+#0 ]|'[\s\S])*)(\d+)?(?:\.(\d*))?([\s\S])/g
-  const args = arguments
-  let i = 0
-  const format = args[i++]
+  var regex = /%%|%(?:(\d+)\$)?((?:[-+#0 ]|'[\s\S])*)(\d+)?(?:\.(\d*))?([\s\S])/g
+  var args = arguments
+  var i = 0
+  var format = args[i++]
 
-  const _pad = function (str, len, chr, leftJustify) {
+  var _pad = function (str, len, chr, leftJustify) {
     if (!chr) {
       chr = ' '
     }
-    const padding = (str.length >= len) ? '' : new Array(1 + len - str.length >>> 0).join(chr)
+    var padding = (str.length >= len) ? '' : new Array(1 + len - str.length >>> 0).join(chr)
     return leftJustify ? str + padding : padding + str
   }
 
-  const justify = function (value, prefix, leftJustify, minWidth, padChar) {
-    const diff = minWidth - value.length
+  var justify = function (value, prefix, leftJustify, minWidth, padChar) {
+    var diff = minWidth - value.length
     if (diff > 0) {
       // when padding with zeros
       // on the left side
@@ -84,15 +84,15 @@ module.exports = function sprintf () {
     return value
   }
 
-  const _formatBaseX = function (value, base, leftJustify, minWidth, precision, padChar) {
+  var _formatBaseX = function (value, base, leftJustify, minWidth, precision, padChar) {
     // Note: casts negative numbers to positive ones
-    const number = value >>> 0
+    var number = value >>> 0
     value = _pad(number.toString(base), precision || 0, '0', false)
     return justify(value, '', leftJustify, minWidth, padChar)
   }
 
   // _formatString()
-  const _formatString = function (value, leftJustify, minWidth, precision, customPadChar) {
+  var _formatString = function (value, leftJustify, minWidth, precision, customPadChar) {
     if (precision !== null && precision !== undefined) {
       value = value.slice(0, precision)
     }
@@ -100,18 +100,18 @@ module.exports = function sprintf () {
   }
 
   // doFormat()
-  const doFormat = function (substring, argIndex, modifiers, minWidth, precision, specifier) {
-    let number, prefix, method, textTransform, value
+  var doFormat = function (substring, argIndex, modifiers, minWidth, precision, specifier) {
+    var number, prefix, method, textTransform, value
 
     if (substring === '%%') {
       return '%'
     }
 
     // parse modifiers
-    let padChar = ' ' // pad with spaces by default
-    let leftJustify = false
-    let positiveNumberPrefix = ''
-    let j, l
+    var padChar = ' ' // pad with spaces by default
+    var leftJustify = false
+    var positiveNumberPrefix = ''
+    var j, l
 
     for (j = 0, l = modifiers.length; j < l; j++) {
       switch (modifiers.charAt(j)) {
