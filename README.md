@@ -1,43 +1,37 @@
-# Locutus
+# Locutus.sprintf
 
-All your standard libraries will be assimilated into our JavaScript collective. Resistance is futile.
+Locutus's version of sprintf and vsprintf in an NPM package
 
-More info at: https://locutus.io/
+More info at: https://locutus.io/php/strings/sprintf/
+
+This project is a fork of https://github.com/locutusjs/locutus and [@code-lts](https://github.com/code-lts) will do it's best to keep this up to date.
 
 ## Install
 
-```bash
-npm install locutus
-```
-
-## Use
+You can use the [locutus](https://www.npmjs.com/package/locutus) package is you only want the Node version
 
 ```bash
-vim index.js
+npm install locutus.sprintf
 ```
+
+or
+
+```bash
+yarn add locutus.sprintf
+```
+
+## Use for Node
 
 ```javascript
 var sprintf = require('locutus/php/strings/sprintf')
-var echo = require('locutus/php/strings/echo')
 var effectiveness = 'futile'
-echo(sprintf('Resistance is %s', effectiveness))
+console.log(sprintf('Resistance is %s', effectiveness))
 ```
+
+## Use for a browser
 
 ```javascript
-var strings = require('locutus/golang/strings')
-console.log(strings.Contains('Locutus', 'cut'))
+<script type="text/javascript" src="vendor/js/locutus.sprintf/sprintf.js"></script>
+var effectiveness = 'futile'
+console.log(sprintf('Resistance is %s', effectiveness))
 ```
-
-```bash
-$ node index.js
-Resistance is futile
-true
-```
-
-## Development
-
-Some guidelines and instructions can be found in [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Sponsors
-
-:sparkles: thanks to <https://jetbrains.com> for providing a free license to their development tools :heart:
