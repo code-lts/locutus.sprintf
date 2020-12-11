@@ -20,13 +20,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-module.exports = function vsprintf (format, args) {
+function vsprintf (format, args) {
   //  discuss at: https://locutus.io/php/vsprintf/
   // original by: ejsanders
   //   example 1: vsprintf('%04d-%02d-%02d', [1988, 8, 1])
   //   returns 1: '1988-08-01'
 
-  const sprintf = require('../strings/sprintf')
+  const sprintf = require('./sprintf')
 
   return sprintf.apply(this, [format].concat(args))
 }
