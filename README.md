@@ -35,3 +35,22 @@ console.log(sprintf('Resistance is %s', effectiveness))
 var effectiveness = 'futile'
 console.log(sprintf('Resistance is %s', effectiveness))
 ```
+
+## Package tree
+
+```tree
+.
+├── LICENSE
+├── package.json
+├── README.md
+└── src
+    └── php
+        ├── index.js
+        └── strings
+            ├── sprintf.browser.js
+            ├── sprintf.js
+            ├── vsprintf.browser.js
+            └── vsprintf.js
+
+3 directories, 8 files
+```
